@@ -9,7 +9,7 @@ build:
     build_file: none
     args:
       BUILD_DIR: /src
-      PROJECT_PATH: /PostgreSqlDotnetCore/PostgreSqlDotnetCore.csproj
+      PROJECT_PATH: /VehicleQuotes.csproj
       NUGET_CONFIG: /Nuget.Config
     output_files: output/*.zip
     image_template: dotnet-3.1
@@ -28,5 +28,5 @@ properties:
    DB_PASSWORD:
       vault: POSTGRESQL_DOTNET_PASSWORD
    ASPNETCORE_ENVIRONMENT: Development
-   DLL: PostgreSqlDotnetCore.dll
+   DLL: VehicleQuotes.dll
    revision: 28
