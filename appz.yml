@@ -29,4 +29,4 @@ properties:
       vault: POSTGRESQL_DOTNET_PASSWORD
    ASPNETCORE_ENVIRONMENT: Development
    DLL: VehicleQuotes.dll
-   revision: 28
+   revision: 29
