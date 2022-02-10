@@ -1,0 +1,32 @@
+app:
+    name: Postgres Dotnet VehQuote
+    code: POSTGRESDOTNETVehQuote
+    notify: skumar@ecloudcontrol.com
+    
+build:
+    version: 3.1
+    env: DEV
+    build_file: none
+    args:
+      BUILD_DIR: /src
+      PROJECT_PATH: /PostgreSqlDotnetCore/PostgreSqlDotnetCore.csproj
+      NUGET_CONFIG: /Nuget.Config
+    output_files: output/*.zip
+    image_template: dotnet-3.1
+    
+deploy:
+    context: skumarpi/DEV
+    replicas: 1
+    port:
+    - 80
+    
+properties:
+   DB_SERVER: pgconnect-0-2
+   DB_PORT: '5000'
+   DB_USERNAME: dotnet
+   DB_NAME: dotnet
+   DB_PASSWORD:
+      vault: POSTGRESQL_DOTNET_PASSWORD
+   ASPNETCORE_ENVIRONMENT: Development
+   DLL: PostgreSqlDotnetCore.dll
+   revision: 28
